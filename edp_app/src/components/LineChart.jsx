@@ -59,7 +59,7 @@ const LineChart = ({chartData}) => {
         ],
       };
   return (
-    <div style={{width:'100%',height:'300px',display:'flex',justifyContent:'center',alignItems:'center'}}><Line style={{width:'50%',height:'100%'}} options={options} data={data} /></div>
+    <div style={{width:'100%',height:'400px',display:'flex',justifyContent:'center',alignItems:'center'}}><Line style={{width:'70%',height:'100%'}} options={options} data={data} /></div>
   )
 }
 
