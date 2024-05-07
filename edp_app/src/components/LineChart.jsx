@@ -38,8 +38,8 @@ const LineChart = ({chartData}) => {
 
 
 
-      const labels = [0];
-      const fielddata=[0];
+      const labels = [];
+      const fielddata=[];
 
       chartData&&chartData.map((temp)=>{
         labels.push(temp.time);

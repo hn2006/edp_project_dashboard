@@ -30,7 +30,7 @@ const Dashboard = () => {
 
             getdata();
 
-        },60000);
+        },30000);
 
         return ()=>{
             clearInterval(intervalcall);
@@ -53,6 +53,9 @@ const Dashboard = () => {
                         </div>
                         <div className='dashboard-single-details-box yellow-box'><div className='container-title-box'>Avg Speed</div>
                             <div className='symbol-box-container'><div className='amount'><span className='span'>{dashboardData&&dashboardData.avg_speed} </span><span>Km/hr</span></div></div>
+                        </div>
+                        <div className='dashboard-single-details-box yellow-box' style={{'backgroundColor':'grey'}}><div className='container-title-box'>Curr Speed</div>
+                            <div className='symbol-box-container'><div className='amount'><span className='span'>{dashboardData&&dashboardData.data&&Number(dashboardData.data[dashboardData.data.length-1].speed).toPrecision(2)} </span><span>Km/hr</span></div></div>
                         </div>
                     </div>
 
@@ -82,7 +85,7 @@ const Dashboard = () => {
                                     </TableRow>
                                 </TableHead>
                                 <TableBody>
-                                    {dashboardData &&dashboardData.data&& dashboardData.data.map((row) => (
+                                    {dashboardData &&dashboardData.data&& dashboardData.data.slice().reverse().slice(0,5).map((row) => (
                                         <TableRow
                                             key={row._id}
                                             sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
